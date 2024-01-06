@@ -13,25 +13,29 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  */
-package org.glassfish.adminguing;
+package org.glassfish.adminguing.security;
+
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 
 /**
  *
  * @author Ondro Mihalyi
  */
-public enum Views {
-    INDEX("index") // index.xhtml
-    , LOGOUT("logout") // faces-config.xml
-    ;
+@Named
+@RequestScoped
+public class LoginView {
 
-    protected String viewId;
+    private String header = DEFAULT_HEADER;
+    private static final String DEFAULT_HEADER = "Log in to continue";
 
-    private Views(String viewId) {
-        this.viewId = viewId;
+    public String getHeader() {
+        return header;
     }
 
-    public String getViewId() {
-        return viewId;
+    public void setHeader(String header) {
+        this.header = header;
     }
+
 
 }

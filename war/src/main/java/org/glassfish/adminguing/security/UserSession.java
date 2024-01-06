@@ -42,6 +42,6 @@ public class UserSession implements Serializable {
     public String logOut() throws ServletException {
         httpSession.invalidate();
         httpRequest.logout();
-        return Views.INDEX.getViewId();
+        return Views.LOGOUT.getViewId();
     }
 }

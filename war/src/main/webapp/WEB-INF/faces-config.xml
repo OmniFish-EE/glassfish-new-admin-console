@@ -25,9 +25,21 @@
               xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_4_0.xsd">
     <navigation-rule>
         <navigation-case>
-            <from-outcome>index</from-outcome>
+            <!-- When the next implicit view is "logout" -->
+            <from-outcome>logout</from-outcome>
+            <!-- Show the index.xhtml view -->
             <to-view-id>index</to-view-id>
-            <redirect />
+            <!-- Redirect to change the URL instead of foward.
+                It also creates a new request, which will show the login form if not logged in. 
+                Otherwise the the index view would be displayed as if the user was logged in,
+                because the user is logged in until the end of the request. -->
+            <redirect >
+                <!-- Pass request parameter to the login screen -->
+                <redirect-param>
+                    <name>header</name>
+                    <value>You were logged out. Log in to continue</value>
+                </redirect-param>
+            </redirect>
         </navigation-case>
     </navigation-rule>
 
