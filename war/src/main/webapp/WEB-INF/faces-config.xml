@@ -24,7 +24,20 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_4_0.xsd">
     <navigation-rule>
+        <description>
+            Navigation rules for all source views
+        </description>
         <navigation-case>
+            <description>
+                Apply redirect instead of forward for all views by default
+            </description>
+            <to-view-id>#{facesContext.viewRoot.viewId}</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <description>
+                Defines navigation for the "logout" outcome, which doesn't have a matching view ID
+            </description>
             <!-- When the next implicit view is "logout" -->
             <from-outcome>logout</from-outcome>
             <!-- Show the index.xhtml view -->
@@ -34,6 +47,9 @@
                 Otherwise the the index view would be displayed as if the user was logged in,
                 because the user is logged in until the end of the request. -->
             <redirect >
+                <description>
+                    Redirect to the index page and pass a query parameter "header"
+                </description>
                 <!-- Pass request parameter to the login screen -->
                 <redirect-param>
                     <name>header</name>
