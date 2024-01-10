@@ -26,7 +26,8 @@ import jakarta.security.enterprise.authentication.mechanism.http.LoginToContinue
  */
 @FormAuthenticationMechanismDefinition(loginToContinue = @LoginToContinue(
         loginPage = "/login.xhtml",
-        errorPage = "/login-error.xhtml"
+        errorPage = "/login-error.xhtml",
+        useForwardToLogin = false
 ))
 @ApplicationScoped
 @DeclareRoles("admin")
