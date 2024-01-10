@@ -16,7 +16,7 @@
 package org.glassfish.adminguing;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
-import static org.glassfish.adminguing.LogInLogOutTest.TypeOfBrowser.CHROMIUM;
+import static org.glassfish.adminguing.LogInLogOutIT.TypeOfBrowser.CHROMIUM;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
@@ -29,7 +29,7 @@ import org.junit.jupiter.api.Test;
  *
  * @author Ondro Mihalyi
  */
-public class LogInLogOutTest {
+public class LogInLogOutIT {
 
     private static final boolean SHOW_BROWSER = false;
     private static final TypeOfBrowser BROWSER = CHROMIUM;

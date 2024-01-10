@@ -58,5 +58,7 @@
             </redirect>
         </navigation-case>
     </navigation-rule>
-
+    <factory>
+        <exception-handler-factory>org.glassfish.adminguing.AdminGuiExceptionHandlerFactory</exception-handler-factory>
+    </factory>
 </faces-config>
